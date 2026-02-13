@@ -120,6 +120,13 @@ footer{
 <footer>for drishy</footer>
 
 <script>
+const gTitle = document.getElementById('gTitle');
+const gDesc = document.getElementById('gDesc');
+const gList = document.getElementById('gList');
+const cInput = document.getElementById('cInput');
+const cOut = document.getElementById('cOut');
+const aOut = document.getElementById('aOut');
+
 let grievances = JSON.parse(localStorage.getItem('grievances')||"[]");
 let compliments = JSON.parse(localStorage.getItem('compliments')||"[]");
 
@@ -128,7 +135,6 @@ const defaultCompliments = [
 "You have a way of making people feel understood without trying.",
 "Being around you makes things feel lighter.",
 "You notice details most people miss, and it shows how thoughtful you are.",
-"You carry yourself with a quiet confidence I really admire.",
 "You make conversations feel effortless.",
 "Your presence feels grounding in the best way.",
 "You’re the kind of person people trust naturally.",
@@ -136,7 +142,15 @@ const defaultCompliments = [
 "There’s a warmth to you that people don’t forget.",
 "You make me want to be more patient and more present.",
 "You have a softness and strength at the same time, which is rare.",
-"I like how you don’t try to impress people — you just are y
+"I like how you don’t try to impress people — you just are yourself.",
+"You make things feel stable, even when life isn’t.",
+"You feel like home in a way I didn’t expect."
+];
+
+if(compliments.length===0){
+  compliments = defaultCompliments;
+  localStorage.setItem('compliments', JSON.stringify(compliments));
+}
 
 function save(){
   localStorage.setItem('grievances',JSON.stringify(grievances));
@@ -181,15 +195,26 @@ function withdrawCompliment(){
 }
 
 const apologies=[
-"I am sincerely sorry.",
-"I was wrong and I admit it.",
-"Please forgive me. I will do better.",
-"No excuses. Just a genuine apology.",
-"I take responsibility."
+"I’m sorry, Drishy. I should have handled that better.",
+"I didn’t think it through, pie. That’s on me.",
+"I understand why that upset you, smol. I’ll do better.",
+"I’m sorry for how I reacted, Drishy. You deserved more care.",
+"I should’ve listened properly, pie. I hear you now.",
+"I wasn’t as thoughtful as I should have been, smol. I’m sorry.",
+"I regret that, Drishy. I’ll be more mindful next time.",
+"I didn’t mean to make things harder for you, pie.",
+"I know I messed up, smol. I’ll handle it better going forward.",
+"I care about you a lot, Drishy, and I should’ve shown it.",
+"I don’t like knowing I hurt you, smol. I’m sorry.",
+"I should have chosen my words more carefully, pie.",
+"I want to handle things better for you, Drishy.",
+"I should’ve been more patient, smol.",
+"You mattered more than the situation, pie. I’m sorry."
 ];
 
 function generateApology(){
-  aOut.textContent = apologies[Math.floor(Math.random()*apologies.length)];
+  const text = apologies[Math.floor(Math.random()*apologies.length)];
+  aOut.textContent = text;
 }
 </script>
 
