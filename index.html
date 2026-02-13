@@ -123,6 +123,21 @@ footer{
 let grievances = JSON.parse(localStorage.getItem('grievances')||"[]");
 let compliments = JSON.parse(localStorage.getItem('compliments')||"[]");
 
+const defaultCompliments = [
+"You make ordinary days feel calm and meaningful.",
+"You have a way of making people feel understood without trying.",
+"Being around you makes things feel lighter.",
+"You notice details most people miss, and it shows how thoughtful you are.",
+"You carry yourself with a quiet confidence I really admire.",
+"You make conversations feel effortless.",
+"Your presence feels grounding in the best way.",
+"You’re the kind of person people trust naturally.",
+"You make my life feel more structured and more alive at the same time.",
+"There’s a warmth to you that people don’t forget.",
+"You make me want to be more patient and more present.",
+"You have a softness and strength at the same time, which is rare.",
+"I like how you don’t try to impress people — you just are y
+
 function save(){
   localStorage.setItem('grievances',JSON.stringify(grievances));
   localStorage.setItem('compliments',JSON.stringify(compliments));
